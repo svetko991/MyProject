@@ -12,4 +12,15 @@ public abstract class BasePage {
 
     }
 
+
+    @FindBy(css = ".login-link")
+    public WebElement login;
+
+    @FindBy(linkText = "My Account")
+    public WebElement myAccount;
+
+
+    
+
+
 }
