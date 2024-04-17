@@ -7,7 +7,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-
 import java.util.Map;
 
 
@@ -33,17 +32,15 @@ public class Norfield_StepDefs {
         String actualEmailErrMsg = loginPage.emailErrorMsg.getText();
         String actualPasswordErrMsg = loginPage.passwordErrorMsg.getText();
 
-        Assert.assertEquals("The email and password messages does not match", expectedErrorMsg, actualEmailErrMsg);
+        Assert.assertEquals(expectedErrorMsg, actualEmailErrMsg);
         Assert.assertEquals(expectedErrorMsg, actualPasswordErrMsg);
-
     }
 
-    @When("the user enters invalid format email and password")
-    public void theUserEntersInvalidFormatEmailAndPassword(Map<String, String> credentials) {
+    @When("the user enters invalid email and password")
+    public void theUserEntersInvalidEmailAndPassword(Map<String, String> credentials) {
 
         loginPage.emailField.sendKeys(credentials.get("username"));
         loginPage.passwordField.sendKeys(credentials.get("password"));
-
     }
 
     @Then("Message {string} should appear.")
@@ -52,16 +49,13 @@ public class Norfield_StepDefs {
         String actualMessage = loginPage.emailErrorMsg.getText();
 
         Assert.assertEquals(expectedMessage, actualMessage);
-
     }
 
-    @Then("Message error {string} should appear on the page.")
+    @Then("message error {string} should appear on the page.")
     public void messageErrorShouldAppearOnThePage(String expectedMessage) {
 
         String actualMessage = loginPage.messageError.getText();
 
         Assert.assertEquals(expectedMessage, actualMessage);
-
-
     }
 }
