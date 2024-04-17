@@ -7,11 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
 
-    private BasePage() {
-        PageFactory.initElements(Driver.getDriver(),this);
-
-    }
-
 
     @FindBy(css = ".login-link")
     public WebElement login;
@@ -19,8 +14,11 @@ public abstract class BasePage {
     @FindBy(linkText = "My Account")
     public WebElement myAccount;
 
+    @FindBy(css = ".action.showcart")
+    public WebElement myCArt;
 
-    
+    @FindBy(linkText = "Checkout")
+    public WebElement checkout;
 
 
 }
