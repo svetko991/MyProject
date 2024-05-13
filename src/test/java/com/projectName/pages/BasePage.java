@@ -7,11 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 public abstract class BasePage {
 
-    private BasePage() {
-        PageFactory.initElements(Driver.getDriver(),this);
-
-    }
-
 
     @FindBy(css = ".login-link")
     public WebElement login;
