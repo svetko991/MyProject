@@ -1,7 +1,6 @@
 package com.projectName.step_definitions;
 
 import com.projectName.utilities.ConfigurationReader;
-import com.projectName.utilities.DB_Util;
 import com.projectName.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -28,21 +27,6 @@ public class Hooks {
         }
 
         Driver.closeDriver();
-    }
-
-    @Before("@db")
-    public void setUpDB() {
-
-        System.out.println("Connecting to database");
-        DB_Util.createConnection();
-
-    }
-
-    @After("@db")
-    public void tearDownDB() {
-
-        System.out.println("closing database connection");
-        DB_Util.destroy();
     }
 
 
